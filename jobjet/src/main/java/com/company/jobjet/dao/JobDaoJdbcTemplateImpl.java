@@ -14,6 +14,7 @@ import java.util.List;
 @Repository
 public class JobDaoJdbcTemplateImpl implements JobDao{
 
+    // Constructor
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -37,6 +38,7 @@ public class JobDaoJdbcTemplateImpl implements JobDao{
     private static final String UPDATE_JOB_SQL =
             "update job set job_title = ?, job_description = ?, posted_date = ?, status = ? where job_id = ?";
 
+    //Mapper
     private Job mapRowToJob(ResultSet rs, int rowNum) throws SQLException {
         Job job = new Job();
         job.setJobId(rs.getInt("job_id"));
@@ -48,8 +50,9 @@ public class JobDaoJdbcTemplateImpl implements JobDao{
         return job;
     }
 
-    @Transactional
+    //Implementations
     @Override
+    @Transactional
     public Job addJob(Job job) {
         jdbcTemplate.update(
                 INSERT_JOB_SQL,

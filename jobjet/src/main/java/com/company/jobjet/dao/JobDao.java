@@ -5,14 +5,12 @@ import com.company.jobjet.dto.Job;
 import java.util.List;
 
 public interface JobDao {
+
+    //CRUD Methods
     Job addJob(Job job);
-
     Job getJob(int jobId);
-
     List<Job> getAllJobs();
-
     Job updateJob(Job job);
-
     void deleteJob(int jobId);
 
 }

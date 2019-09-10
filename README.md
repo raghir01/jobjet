@@ -6,5 +6,8 @@ Added Dependencies
 	MySql Driver,	
 	JDBC API.
 	
+Created Schema and Tables
+
 Performed standard CRUD operations for Jobs.
+
 Followed TDD.

@@ -36,10 +36,17 @@ public class JobController {
         return jobService.getAllJobs();
     }
 
+    @PutMapping
+    @ResponseStatus(value = HttpStatus.OK)
+    JobViewModel updateJob(@RequestBody @Valid JobViewModel jobViewModel){
+        return jobService.updateJob(jobViewModel);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     void deleteJob(@PathVariable int id){
          jobService.deleteJob(id);
     }
+
 
 }

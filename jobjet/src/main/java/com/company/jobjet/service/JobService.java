@@ -34,6 +34,7 @@ public class JobService {
     public JobViewModel getJob(int jobId){
         Job job = jobDao.getJob(jobId);
         JobViewModel jobViewModel = new JobViewModel();
+        jobViewModel.setJobTitle(job.getJobTitle());
         jobViewModel.setJobId(job.getJobId());
         jobViewModel.setJobDescription(job.getJobDescription());
         jobViewModel.setPostedDate(job.getPostedDate());

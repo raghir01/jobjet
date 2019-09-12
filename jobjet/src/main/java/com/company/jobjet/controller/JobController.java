@@ -36,7 +36,7 @@ public class JobController {
         return jobService.getAllJobs();
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @ResponseStatus(value = HttpStatus.OK)
     JobViewModel updateJob(@RequestBody @Valid JobViewModel jobViewModel){
         return jobService.updateJob(jobViewModel);
